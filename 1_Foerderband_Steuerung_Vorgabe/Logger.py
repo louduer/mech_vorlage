@@ -45,7 +45,7 @@ class Logger:
 
     def log(self, position, speed, PIDactions):
         """
-        Add a data tupple to the log.
+        Add a data tuple to the log.
         """
         self.__positions.append(position)
         self.__speeds.append(speed)
