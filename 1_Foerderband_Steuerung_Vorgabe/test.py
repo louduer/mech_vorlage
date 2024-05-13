@@ -1,9 +1,9 @@
 # Copyright 2022 Hochschule Luzern - Informatik
 # Author: Silvan Wegmann <silvan.wegmann@hslu.ch>
-import sys
+import sys, pathlib
 from tests.utils import is_raspberrypi
 if not is_raspberrypi():
-    sys.path.append("tests/mocks")
+    sys.path.append(str(pathlib.Path(__file__).parent / "tests" / "mocks"))
 
 import unittest
 from tests.EncoderTest import EncoderTest
