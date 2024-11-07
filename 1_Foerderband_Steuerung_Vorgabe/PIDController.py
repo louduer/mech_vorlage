@@ -14,8 +14,8 @@ class PIDController:
 
         # PID constants:
         self.kp = 0.5
-        self.ki = 0.05
-        self.kd = 0.005
+        self.Tn = 10
+        self.Tv = 0.001
 
     def reset(self):
         """
@@ -50,7 +50,7 @@ class PIDController:
 
         # Save the three parts of the controller in a vector
         PIDactions = [p_part, i_part, d_part]
-        # The output speed is the sum of the parts
+        # The output speed is the sum of the parts, 1023 equals 5V = max output
         targetValue = sum(PIDactions)
 
         return int(targetValue), PIDactions
