@@ -137,16 +137,16 @@ class Logger:
                 plt.legend()
             figtitle = (str(title))
             plt.figtext(0.5, 0.01, ("overshoot=" + str(overshoot) + " [mm]" +
-                                    "   risetime=" + str(risetime) + " [s]" +
-                                    "   settletime=" + str(settletime) + " [s]"),
-                        ha="center",
-                        fontsize=12,
-                        bbox={"facecolor": "salmon", "alpha": 0.3, "pad": 5})
+                "   risetime=" + str(risetime) + " [s]" +
+                "   settletime=" + str(settletime) + " [s]"),
+                ha="center",
+                fontsize=12,
+                bbox={"facecolor": "salmon", "alpha": 0.3, "pad": 5})
             fig.suptitle(figtitle,
-                         va='top',
-                         ha="center",
-                         fontsize=12,
-                         bbox={"facecolor": "aquamarine", "alpha": 0.3, "pad": 5})
+                va='top',
+                ha="center",
+                fontsize=12,
+                bbox={"facecolor": "aquamarine", "alpha": 0.3, "pad": 5})
             plt.subplots_adjust(top=0.5)
             fig.tight_layout(pad=3)  # otherwise the right y-label is slightly clipped
             plt.show()

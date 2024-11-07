@@ -23,8 +23,6 @@ class PIDController:
         """
         self.errorLinear = self.refposition
         self.errorIntegral = 0
-        # TODO: Wenn Sie weitere Instanz-Variablen in __init__() erzeugen (Werte mit self. ...=.... setzen), dann
-        #  stellen Sie sicher, dass diese auch in der reset()-Funktion wieder korrekt zurückgesetzt werden
 
     def calculateTargetValue(self, actualValue):
         """

@@ -25,8 +25,8 @@ class PIDControllerTest(unittest.TestCase):
         # anpassen und müssen nicht befürchten, dass diese Tests deswegen
         # plötzlich nicht mehr durchlaufen
         self.pid.kp = 0.5
-        self.pid.ki = 0.05
-        self.pid.kd = 0.005
+        self.pid.Tn = 10
+        self.pid.Tv = 0.01
 
         # TODO: Füllen Sie hier bei den erwarteten Werten (2ter Parameter)
         #  die Resultate aus Ihrem Excel-Sheet ein
@@ -50,8 +50,8 @@ class PIDControllerTest(unittest.TestCase):
         # zusätzlich reset() aufrufen, da innerhalb dieser Funktion
         # self.errorLinear auf refposition zurück gesetzt wird.
         self.pid.kp = 0.5
-        self.pid.ki = 0.5
-        self.pid.kd = 0.005
+        self.pid.Tn = 0.05
+        self.pid.Tv = 0.01
 
         self.pid.refposition = 70000
         self.pid.reset()
