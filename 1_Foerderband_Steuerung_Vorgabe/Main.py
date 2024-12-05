@@ -13,7 +13,7 @@ running = False          # Controller state
 waitingtime = 1          # Waiting time in seconds for output
 
 pidcontroller = PIDController()
-logger = Logger(pidcontroller.kp, pidcontroller.ki, pidcontroller.kd, pidcontroller.refposition)
+logger = Logger(pidcontroller.kp, pidcontroller.Tn, pidcontroller.Tv, pidcontroller.refposition)
 encoder = Encoder(23, 24)
 motor = Motor('GPIO16', 'GPIO17', 'GPIO18')
 

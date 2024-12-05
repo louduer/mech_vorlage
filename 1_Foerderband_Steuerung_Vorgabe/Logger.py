@@ -18,7 +18,7 @@ class Logger:
         """
         Create a logger and save parameters for displaying.
         """
-        self.__title = "Kp = " + str(round(kp, 3)) + " Ki = " + str(round(ki, 3)) + " Kd = " + str(round(kd, 3)) \
+        self.__title = "Kp = " + str(round(kp, 3)) + " Tn = " + str(round(ki, 3)) + " Tv = " + str(round(kd, 3)) \
                        + " Refpos = " + str(round(refposition, 0))
         self.__speeds = array('l')
         self.__positions = array('l')
