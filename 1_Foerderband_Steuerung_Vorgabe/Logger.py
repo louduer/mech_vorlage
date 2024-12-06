@@ -2,11 +2,12 @@
 # Author: Simon van Hemert <simon.vanhemert@hslu.ch>
 # Author: Peter Sollberger <peter.sollberger@hslu.ch>
 
-from matplotlib import pyplot as plt
+import sys
 from array import array
 from multiprocessing import Process
-import sys
+
 import numpy as np
+from matplotlib import pyplot as plt
 
 
 class Logger:

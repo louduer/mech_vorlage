@@ -4,6 +4,7 @@
 from gpiozero import LED
 from spidev import SpiDev
 
+# TODO Refactor, so dass nicht von 'motorspeed' sondern von 'motorvoltage' gesprochen wird
 
 class Motor:
     """
