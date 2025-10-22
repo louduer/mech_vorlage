@@ -8,8 +8,8 @@ class PIDController:
     """
     def __init__(self):
         # Initialize variables
-        self.reference_position = 415                # Reference position in mm
-        self.error_linear = self.reference_position  # Initial error
+        self.reference_value = 415                # Reference position in mm
+        self.error_linear = self.reference_value  # Initial error
         self.error_integral = 0
         self.anti_windup = 1023                      # Anti-windup for Integrator, 1023 equals 5V = max speed
 
@@ -18,23 +18,20 @@ class PIDController:
         self.Tn = 10
         self.Tv = 0.001
 
-        self.last_velocity = 0
-        self.last_position = 0
-
     def reset(self):
         """
         Restore controller with initial values.
         """
-        self.error_linear = self.reference_position
+        self.error_linear = self.reference_value
         self.error_integral = 0
 
     def calculate_controller_output(self, actual_value):
 
-        velocity = (actual_value - self.last_position) / 0.01
+        velocity = (actual_value - self.last_value) / 0.01
         acceleration = (velocity-self.last_velocity) / 0.01
 
         self.last_velocity = velocity
-        self.last_position = actual_value
+        self.last_value = actual_value
 
         """
         Calculate next target values with the help of a PID controller.

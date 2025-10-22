@@ -13,7 +13,7 @@ running = False           # Controller state
 waiting_time = 1          # Waiting time in seconds for output
 
 pidcontroller = PIDController()
-logger = Logger(pidcontroller.kp, pidcontroller.Tn, pidcontroller.Tv, pidcontroller.reference_position)
+logger = Logger(pidcontroller.kp, pidcontroller.Tn, pidcontroller.Tv, pidcontroller.reference_value)
 encoder = Encoder(23, 24)
 motor = Motor('GPIO16', 'GPIO17', 'GPIO18')
 
@@ -103,7 +103,7 @@ if __name__ == '__main__':
             now = time()
             pos = encoder.get_position()
             v = motor.get_voltage()
-            print("Position:", pos, "Speed: ", v)
+            print("Position [mm]:", pos, "Voltage [%]: ", v*100)
             elapsed = time() - now
             sleep(waiting_time - elapsed)
 

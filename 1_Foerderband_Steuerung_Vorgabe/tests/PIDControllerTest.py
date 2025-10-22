@@ -12,7 +12,7 @@ class PIDControllerTest(unittest.TestCase):
         del self.pid
 
     def test_init(self):
-        self.assertEqual(self.pid.error_linear, self.pid.reference_position,
+        self.assertEqual(self.pid.error_linear, self.pid.reference_value,
                          "linear error and reference position should be equal at initialisation")
         self.assertEqual(self.pid.error_integral, 0,
                          "integral error should be 0 at initialisation")
@@ -53,7 +53,7 @@ class PIDControllerTest(unittest.TestCase):
         self.pid.Tn = 0.05
         self.pid.Tv = 0.01
 
-        self.pid.reference_position = 70000
+        self.pid.reference_value = 70000
         self.pid.reset()
 
         # TODO: Füllen Sie hier bei den erwarteten Werten (2ter Parameter)
