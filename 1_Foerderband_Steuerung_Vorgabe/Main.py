@@ -53,7 +53,7 @@ def start_pressed():
     logger.clean()
     pidcontroller.reset()
     encoder.reset_position()
-    # TODO: Starten Sie den Motor
+    motor.on()
 
     running = True
 
@@ -70,7 +70,7 @@ def stop_pressed():
 
     if running:
         print("Stopping")
-        # TODO: Stopping Sie den Motor
+        motor.stop()
 
         logger.showLoggings(feedback=True, save=True)
         running = False
